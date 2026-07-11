@@ -454,6 +454,8 @@ print(original["list"])   # tidak berubah: [1, 2, 3]
 #### `numpy`
 Komputasi numerik dengan array multidimensi yang efisien.
 
+**Install:** `pip install numpy`
+
 ```python
 import numpy as np
 
@@ -466,6 +468,8 @@ matrix = np.zeros((2, 3))   # matriks 2x3 berisi nol
 #### `pandas`
 Analisis dan manipulasi data tabular (DataFrame), mirip spreadsheet.
 
+**Install:** `pip install pandas`
+
 ```python
 import pandas as pd
 
@@ -477,6 +481,8 @@ df.to_csv("output.csv", index=False)
 
 #### `matplotlib`
 Membuat grafik dan visualisasi data.
+
+**Install:** `pip install matplotlib`
 
 ```python
 import matplotlib.pyplot as plt
@@ -491,6 +497,8 @@ plt.savefig("grafik.png")
 
 #### `flask`
 Micro web framework untuk membuat API atau aplikasi web sederhana.
+
+**Install:** `pip install flask`
 
 ```python
 from flask import Flask, jsonify
@@ -507,6 +515,8 @@ if __name__ == "__main__":
 
 #### `fastapi`
 Framework web modern berbasis type hints, cepat, dan otomatis membuat dokumentasi API.
+
+**Install:** `pip install fastapi uvicorn`
 
 ```python
 from fastapi import FastAPI
@@ -525,6 +535,8 @@ def baca_produk(item_id: int):
 #### `requests`
 Library HTTP yang sederhana untuk memanggil API atau mengambil halaman web.
 
+**Install:** `pip install requests`
+
 ```python
 import requests
 
@@ -535,6 +547,8 @@ print(response.json())
 
 #### `beautifulsoup4` (`bs4`)
 Parsing dan ekstraksi data dari HTML/XML.
+
+**Install:** `pip install beautifulsoup4`
 
 ```python
 from bs4 import BeautifulSoup
@@ -550,6 +564,8 @@ print([a["href"] for a in soup.find_all("a")])
 
 #### `sqlalchemy`
 ORM (Object-Relational Mapping) untuk berinteraksi dengan database SQL memakai objek Python.
+
+**Install:** `pip install sqlalchemy`
 
 ```python
 from sqlalchemy import create_engine, Column, Integer, String
@@ -575,6 +591,8 @@ with Session(engine) as session:
 #### `pytest`
 Framework testing yang ringkas dan populer di ekosistem Python.
 
+**Install:** `pip install pytest`
+
 ```python
 # file: test_math.py
 def tambah(a, b):
@@ -591,6 +609,8 @@ def test_tambah():
 #### `pydantic`
 Validasi data dan pengaturan (settings) berbasis type hints, sering dipakai bersama FastAPI.
 
+**Install:** `pip install pydantic`
+
 ```python
 from pydantic import BaseModel
 
@@ -605,6 +625,8 @@ print(p.harga, type(p.harga))
 #### `python-dotenv`
 Memuat variabel lingkungan dari file `.env` ke dalam aplikasi.
 
+**Install:** `pip install python-dotenv`
+
 ```python
 from dotenv import load_dotenv
 import os
@@ -615,6 +637,8 @@ api_key = os.getenv("API_KEY")
 
 #### `tqdm`
 Menampilkan progress bar untuk loop atau proses panjang.
+
+**Install:** `pip install tqdm`
 
 ```python
 from tqdm import tqdm
@@ -628,6 +652,8 @@ for i in tqdm(range(100)):
 
 #### `scikit-learn`
 Library machine learning klasik: klasifikasi, regresi, clustering, evaluasi model.
+
+**Install:** `pip install scikit-learn`
 
 ```python
 from sklearn.linear_model import LinearRegression
@@ -646,6 +672,8 @@ print(model.predict([[5]]))   # prediksi mendekati 10
 #### `Pillow` (`PIL`)
 Membuka, memanipulasi, dan menyimpan berbagai format gambar.
 
+**Install:** `pip install pillow`
+
 ```python
 from PIL import Image
 
@@ -662,3 +690,7 @@ print(img.size, img.format)
 1. Gunakan Ctrl+F / daftar isi di atas untuk mencari modul yang dibutuhkan.
 2. Setiap contoh kode bisa langsung dicopy dan dijalankan (pastikan library pihak ketiga sudah di-`pip install` terlebih dahulu).
 3. Tambahkan entri baru dengan mengikuti format: **nama modul** → penjelasan singkat → contoh kode.
+
+## Kontribusi
+
+Silakan tambahkan modul/library lain dengan format yang sama, dikelompokkan sesuai kategori yang paling relevan.
