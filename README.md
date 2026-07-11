@@ -690,7 +690,3 @@ print(img.size, img.format)
 1. Gunakan Ctrl+F / daftar isi di atas untuk mencari modul yang dibutuhkan.
 2. Setiap contoh kode bisa langsung dicopy dan dijalankan (pastikan library pihak ketiga sudah di-`pip install` terlebih dahulu).
 3. Tambahkan entri baru dengan mengikuti format: **nama modul** → penjelasan singkat → contoh kode.
-
-## Kontribusi
-
-Silakan tambahkan modul/library lain dengan format yang sama, dikelompokkan sesuai kategori yang paling relevan.
