@@ -690,3 +690,11 @@ print(img.size, img.format)
 1. Gunakan Ctrl+F / daftar isi di atas untuk mencari modul yang dibutuhkan.
 2. Setiap contoh kode bisa langsung dicopy dan dijalankan (pastikan library pihak ketiga sudah di-`pip install` terlebih dahulu).
 3. Tambahkan entri baru dengan mengikuti format: **nama modul** → penjelasan singkat → contoh kode.
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
+
+You are free to use, copy, modify, merge, publish, distribute, sublicense, and even use this software for commercial purposes, provided that the original copyright notice and this permission notice are included in all copies or substantial portions of the software.
+
+This project is provided **"as is"**, without any warranty of any kind. See the `LICENSE` file for more details.
