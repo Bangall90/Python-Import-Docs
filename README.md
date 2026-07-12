@@ -787,7 +787,6 @@ for row in ws2.iter_rows(values_only=True):
     print(row)
 ```
 
-**Kategori yang cocok:** Excel / Spreadsheet
 
 ## Cara Menggunakan Repo Ini
 
