@@ -450,6 +450,7 @@ print(original["list"])   # tidak berubah: [1, 2, 3]
 
 ### 1.12 Data Base
 
+#### `sqlite3`
 Database ringan berbasis file, bawaan Python (standard library) — tidak perlu install server terpisah.
 
 ```python
