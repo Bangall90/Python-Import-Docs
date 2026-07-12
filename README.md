@@ -26,6 +26,7 @@ Kumpulan dokumentasi *import* Python yang sering dipakai, mencakup **standard li
   - [2.7 Machine Learning](#27-machine-learning)
   - [2.8 Image Processing](#28-image-processing)
   - [2.9 Data App & Dashboard](#29-data-app--dashboard)
+  - [2.10 Excel / Spreadsheet](#210-excel--spreadsheet)
 
 ---
 
@@ -756,6 +757,37 @@ st.write("Angka terpilih:", angka)
  
 # jalankan dengan: streamlit run nama_file.py
 ```
+
+### 2.10 Excel / Spreadsheet
+
+#### `openpyxl`
+Membaca dan menulis file Excel (`.xlsx`) langsung dari Python — bikin, edit, atau baca spreadsheet tanpa buka Excel.
+
+**Install:** `pip install openpyxl`
+
+```python
+from openpyxl import Workbook, load_workbook
+
+# Membuat file Excel baru
+wb = Workbook()
+ws = wb.active
+ws.title = "Data"
+
+ws.append(["Nama", "Umur", "Kota"])
+ws.append(["Budi", 25, "Jakarta"])
+ws.append(["Ani", 30, "Bandung"])
+
+wb.save("data.xlsx")
+
+# Membaca file Excel yang sudah ada
+wb2 = load_workbook("data.xlsx")
+ws2 = wb2.active
+
+for row in ws2.iter_rows(values_only=True):
+    print(row)
+```
+
+**Kategori yang cocok:** Excel / Spreadsheet
 
 ## Cara Menggunakan Repo Ini
 
