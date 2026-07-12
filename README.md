@@ -16,6 +16,7 @@ Kumpulan dokumentasi *import* Python yang sering dipakai, mencakup **standard li
   - [1.9 Konkurensi](#19-konkurensi)
   - [1.10 Logging & Debugging](#110-logging--debugging)
   - [1.11 Lain-lain yang Berguna](#111-lain-lain-yang-berguna)
+  - [1.12 Database (Standard Library)](#112-databse-standard-library)
 - [2. Library Populer (Pihak Ketiga)](#2-library-populer-pihak-ketiga)
   - [2.1 Data Science](#21-data-science)
   - [2.2 Web Development](#22-web-development)
@@ -446,6 +447,53 @@ print(original["list"])   # tidak berubah: [1, 2, 3]
 ```
 
 ---
+
+#### `sqlite3`
+Database ringan berbasis file, bawaan Python (standard library) — tidak perlu install server terpisah.
+
+```python
+import sqlite3
+
+# 1. KONEKSI — membuka (atau membuat baru) file database
+conn = sqlite3.connect("data.db")
+cursor = conn.cursor()
+
+# 2. MENU UTAMA — operasi dasar ke database (CRUD)
+
+# Membuat tabel
+cursor.execute("""
+    CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY,
+        nama TEXT,
+        umur INTEGER
+    )
+""")
+
+# Menambah data (Create)
+cursor.execute("INSERT INTO users (nama, umur) VALUES (?, ?)", ("Budi", 25))
+cursor.execute("INSERT INTO users (nama, umur) VALUES (?, ?)", ("Ani", 30))
+
+# Membaca data (Read)
+cursor.execute("SELECT * FROM users")
+print(cursor.fetchall())
+
+# Mengubah data (Update)
+cursor.execute("UPDATE users SET umur = ? WHERE nama = ?", (26, "Budi"))
+
+# Menghapus data (Delete)
+cursor.execute("DELETE FROM users WHERE nama = ?", ("Ani",))
+
+# 3. SIMPAN — commit() wajib dipanggil supaya perubahan benar-benar tersimpan ke file
+conn.commit()
+
+# Tutup koneksi setelah selesai
+conn.close()
+```
+
+**Keterangan bagian:**
+- **Koneksi:** `sqlite3.connect("data.db")` — membuka file database, otomatis dibuat kalau belum ada.
+- **Simpan:** `conn.commit()` — tanpa ini, semua INSERT/UPDATE/DELETE tidak akan tersimpan permanen ke file.
+- **Menu utama:** `cursor.execute(...)` — tempat semua perintah SQL (CREATE, INSERT, SELECT, UPDATE, DELETE) dijalankan.
 
 ## 2. Library Populer (Pihak Ketiga)
 
