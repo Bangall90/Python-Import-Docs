@@ -16,7 +16,7 @@ Kumpulan dokumentasi *import* Python yang sering dipakai, mencakup **standard li
   - [1.9 Konkurensi](#19-konkurensi)
   - [1.10 Logging & Debugging](#110-logging--debugging)
   - [1.11 Lain-lain yang Berguna](#111-lain-lain-yang-berguna)
-  - [1.12 Database (Standard Library)](#112-databse-standard-library)
+  - [1.12 Database](#112-databse-standard-library)
 - [2. Library Populer (Pihak Ketiga)](#2-library-populer-pihak-ketiga)
   - [2.1 Data Science](#21-data-science)
   - [2.2 Web Development](#22-web-development)
