@@ -25,6 +25,7 @@ Kumpulan dokumentasi *import* Python yang sering dipakai, mencakup **standard li
   - [2.6 Utilitas & Validasi](#26-utilitas--validasi)
   - [2.7 Machine Learning](#27-machine-learning)
   - [2.8 Image Processing](#28-image-processing)
+  - [2.9 Data App & Dashboard](#29-data-app--dashboard)
 
 ---
 
@@ -513,6 +514,33 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
+#### `django`
+Framework web full-stack "batteries-included": ORM, admin panel, auth, routing — semua sudah tersedia.
+ 
+**Install:** `pip install django`
+ 
+```python
+# models.py — mendefinisikan tabel database sebagai class Python
+from django.db import models
+ 
+class Produk(models.Model):
+    nama = models.CharField(max_length=100)
+    harga = models.DecimalField(max_digits=10, decimal_places=2)
+    stok = models.IntegerField(default=0)
+ 
+    def __str__(self):
+        return self.nama
+ 
+# views.py — menangani request dan mengembalikan response
+from django.http import JsonResponse
+ 
+def daftar_produk(request):
+    return JsonResponse({"pesan": "Halo dari Django"})
+ 
+# Setup project baru:   django-admin startproject myproject
+# Jalankan server:       python manage.py runserver
+```
+
 #### `fastapi`
 Framework web modern berbasis type hints, cepat, dan otomatis membuat dokumentasi API.
 
@@ -667,6 +695,28 @@ model.fit(X, y)
 print(model.predict([[5]]))   # prediksi mendekati 10
 ```
 
+#### `torch` (PyTorch)
+Framework deep learning untuk membangun dan melatih neural network, mendukung komputasi GPU.
+ 
+**Install:** `pip install torch`
+ 
+```python
+import torch
+ 
+# Tensor: struktur data utama di PyTorch, mirip array numpy tapi bisa jalan di GPU
+x = torch.tensor([1.0, 2.0, 3.0])
+y = torch.tensor([4.0, 5.0, 6.0])
+print(x + y)                        # tensor([5., 7., 9.])
+ 
+# Cek ketersediaan GPU (CUDA)
+print("GPU tersedia:", torch.cuda.is_available())
+ 
+# Layer neural network sederhana
+model = torch.nn.Linear(in_features=3, out_features=1)
+output = model(x)
+print("Output layer:", output)
+```
+
 ### 2.8 Image Processing
 
 #### `Pillow` (`PIL`)
@@ -684,6 +734,28 @@ print(img.size, img.format)
 ```
 
 ---
+
+### 2.9 Data App & Dashboard
+ 
+#### `streamlit`
+Membuat aplikasi web interaktif (dashboard, alat visualisasi data) hanya dengan kode Python, tanpa perlu HTML/CSS/JS.
+ 
+**Install:** `pip install streamlit`
+ 
+```python
+import streamlit as st
+ 
+st.title("Dashboard Sederhana")
+ 
+nama = st.text_input("Masukkan nama kamu")
+if nama:
+    st.write(f"Halo, {nama}!")
+ 
+angka = st.slider("Pilih angka", 0, 100, 50)
+st.write("Angka terpilih:", angka)
+ 
+# jalankan dengan: streamlit run nama_file.py
+```
 
 ## Cara Menggunakan Repo Ini
 
